@@ -50,7 +50,7 @@ A professional web application that generates strong passwords and simulates how
 ### Local Development
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/password-generator.git
+git clone https://github.com/its-xths/generate-n-crack.git
 
 # Navigate to project directory
 cd password-generator
