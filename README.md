@@ -160,20 +160,6 @@ Modify CSS variables in the style section:
 }
 ```
 
-## 🚀 Deployment
-
-### Cloudflare Pages (Recommended)
-1. Push code to GitHub repository
-2. Connect repository to Cloudflare Pages
-3. Deploy automatically on git push
-4. Access via `https://your-project.pages.dev`
-
-### Other Deployment Options
-- **Netlify**: Drag & drop deployment
-- **Vercel**: GitHub integration
-- **GitHub Pages**: Free static hosting
-- **Firebase Hosting**: Google infrastructure
-
 ## 🤝 Contributing
 
 Contributions are welcome! Here's how you can help:
@@ -197,10 +183,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👨‍💻 Author
 
 **Harshit Sharma** 
-- 🎓 **Roll No**: 25BCS11752
 - 💼 **Project**: Academic Project for External Practical Examination
-- 📧 **Contact**: [Your Email]
-- 🔗 **GitHub**: [@yourusername](https://github.com/yourusername)
+- 📧 **Contact**: [harshitsharma.xt@gmail.com](mailto:harshitsharma.xt@gmail.com)
+- 🔗 **Linkdin**: [@xtharshitsharma](https://www.linkedin.com/in/xtharshitsharma/)
 
 ## 🙏 Acknowledgments
 
@@ -232,7 +217,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Built with ❤️ using HTML, CSS, and Brython**
 
-![Last Updated](https://img.shields.io/badge/Last_Updated-2024--01--15-green)
+![Last Updated](https://img.shields.io/badge/Last_Updated-2025--DEC--11-green)
 ![Version](https://img.shields.io/badge/Version-1.0.0-blue)
 
 </div>
