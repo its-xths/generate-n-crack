@@ -1,0 +1,418 @@
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+        min-height: 100vh;
+        display: flex;
+        padding: 40px 20px;
+        color: #e2e8f0;
+    }
+    
+    .layout-container {
+        display: flex;
+        gap: 40px; /* Increased gap for larger card */
+        max-width: 1500px; /* Increased to accommodate larger card */
+        margin: 0 auto;
+        width: 100%;
+    }
+    
+    /* Left Side - Student Info - ENLARGED */
+    .student-card {
+        background: rgba(30, 30, 46, 0.8);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 60px 45px; /* Increased padding */
+        width: 380px; /* Increased from 280px */
+        height: fit-content;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(102, 126, 234, 0.1);
+        position: sticky;
+        top: 40px;
+        text-align: center;
+        border: 1px solid rgba(102, 126, 234, 0.2);
+    }
+    
+    .student-avatar {
+        width: 140px; /* Increased from 120px */
+        height: 140px; /* Increased from 120px */
+        border-radius: 50%;
+        margin: 0 auto 30px; /* Increased bottom margin */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4), 0 0 20px rgba(102, 126, 234, 0.3);
+        border: 3px solid rgba(102, 126, 234, 0.5);
+    }
+    
+    .student-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .student-name {
+        font-size: 28px; /* Increased from 26px */
+        font-weight: 700;
+        color: #f7fafc;
+        margin-bottom: 12px; /* Increased from 8px */
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        line-height: 1.3;
+    }
+    
+    .student-roll {
+        font-size: 20px; /* Increased from 18px */
+        color: #667eea;
+        font-weight: 600;
+        margin-bottom: 35px; /* Increased from 30px */
+        padding: 12px 24px; /* Increased from 8px 16px */
+        background: rgba(102, 126, 234, 0.15);
+        border-radius: 20px;
+        display: inline-block;
+        border: 1px solid rgba(102, 126, 234, 0.3);
+    }
+    
+    .student-divider {
+        width: 80px; /* Increased from 60px */
+        height: 4px;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        margin: 0 auto;
+        border-radius: 2px;
+    }
+    
+    /* Right Side - Main Content */
+    .main-content {
+        flex: 1;
+        background: rgba(30, 30, 46, 0.8);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 50px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(102, 126, 234, 0.1);
+        border: 1px solid rgba(102, 126, 234, 0.2);
+    }
+    
+    h1 {
+        font-size: 36px;
+        font-weight: 700;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 10px;
+    }
+    
+    .subtitle {
+        color: #a0aec0;
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+    
+    .input-section {
+        background: rgba(45, 45, 65, 0.6);
+        padding: 30px;
+        border-radius: 15px;
+        margin-bottom: 30px;
+        border: 1px solid rgba(102, 126, 234, 0.15);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .input-group {
+        margin-bottom: 25px;
+    }
+    
+    label {
+        font-size: 15px;
+        font-weight: 600;
+        color: #f7fafc;
+        margin-bottom: 10px;
+        display: block;
+    }
+    
+    input[type="number"] {
+        padding: 12px 20px;
+        font-size: 18px;
+        border: 2px solid rgba(102, 126, 234, 0.3);
+        border-radius: 10px;
+        width: 150px;
+        text-align: center;
+        transition: all 0.3s;
+        font-weight: 600;
+        background: rgba(30, 30, 46, 0.8);
+        color: #f7fafc;
+    }
+    
+    input[type="number"]:focus {
+        border-color: #667eea;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+    }
+    
+    .options {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .option {
+        display: flex;
+        align-items: center;
+        padding: 12px;
+        background: rgba(30, 30, 46, 0.8);
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+        border: 1px solid rgba(102, 126, 234, 0.1);
+    }
+    
+    .option:hover {
+        background: rgba(102, 126, 234, 0.1);
+        border-color: rgba(102, 126, 234, 0.3);
+    }
+    
+    .option input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        cursor: pointer;
+        accent-color: #667eea;
+    }
+    
+    .option label {
+        margin: 0;
+        cursor: pointer;
+        font-size: 14px;
+    }
+    
+    button {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 16px 32px;
+        border: none;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        width: 100%;
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+    }
+    
+    button:active {
+        transform: translateY(0);
+    }
+    
+    button::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: 0.5s;
+    }
+    
+    button:hover::after {
+        left: 100%;
+    }
+    
+    .result-section {
+        margin-top: 30px;
+    }
+    
+    h2 {
+        font-size: 22px;
+        color: #f7fafc;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+    
+    .password-display-container {
+        position: relative;
+        margin: 20px 0;
+    }
+    
+    .password-display {
+        font-size: 20px;
+        font-weight: 600;
+        padding: 25px 100px 25px 25px;
+        background: rgba(102, 126, 234, 0.1);
+        border: 2px solid rgba(102, 126, 234, 0.3);
+        border-radius: 12px;
+        overflow-wrap: break-word;
+        text-align: center;
+        min-height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #f7fafc;
+        letter-spacing: 1px;
+        box-shadow: inset 0 0 10px rgba(102, 126, 234, 0.1);
+    }
+    
+    .copy-btn {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 10px 20px;
+        font-size: 14px;
+        cursor: pointer;
+        width: auto;
+        font-weight: 600;
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    }
+    
+    .copy-btn:hover {
+        transform: translateY(-50%) scale(1.05);
+    }
+    
+    .strength-meter {
+        height: 12px;
+        background-color: rgba(45, 45, 65, 0.8);
+        border-radius: 20px;
+        margin: 20px 0;
+        overflow: hidden;
+        border: 1px solid rgba(102, 126, 234, 0.1);
+    }
+    
+    .strength-bar {
+        height: 100%;
+        width: 0%;
+        transition: width 0.5s, background-color 0.5s;
+        border-radius: 20px;
+    }
+    
+    .strength-text {
+        text-align: center;
+        font-weight: 600;
+        color: #a0aec0;
+        font-size: 15px;
+    }
+    
+    .cracking-simulator {
+        margin-top: 40px;
+        padding: 30px;
+        background: rgba(45, 45, 65, 0.6);
+        border-radius: 15px;
+        border-left: 5px solid #667eea;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(102, 126, 234, 0.15);
+    }
+    
+    .cracking-simulator h2 {
+        margin-bottom: 10px;
+    }
+    
+    .cracking-simulator p {
+        color: #a0aec0;
+        margin-bottom: 25px;
+        line-height: 1.6;
+    }
+    
+    .progress-container {
+        margin: 25px 0;
+        height: 24px;
+        background-color: rgba(45, 45, 65, 0.8);
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid rgba(102, 126, 234, 0.1);
+    }
+    
+    .progress-bar {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        transition: width 0.3s;
+        border-radius: 20px;
+    }
+    
+    .cracking-result {
+        margin-top: 20px;
+        padding: 15px;
+        background: rgba(30, 30, 46, 0.8);
+        border-radius: 10px;
+        text-align: center;
+        font-weight: 600;
+        color: #f7fafc;
+        border: 2px solid rgba(102, 126, 234, 0.2);
+    }
+    
+    @media (max-width: 1024px) {
+        .layout-container {
+            flex-direction: column;
+        }
+        
+        .student-card {
+            width: 100%;
+            position: relative;
+            top: 0;
+            padding: 40px 30px; /* Reduced for mobile */
+        }
+        
+        .student-avatar {
+            width: 120px; /* Reduced for mobile */
+            height: 120px; /* Reduced for mobile */
+        }
+        
+        .student-name {
+            font-size: 24px; /* Reduced for mobile */
+        }
+        
+        .student-roll {
+            font-size: 18px; /* Reduced for mobile */
+        }
+        
+        .main-content {
+            padding: 30px;
+        }
+    }
+    
+    @media (max-width: 640px) {
+        .options {
+            grid-template-columns: 1fr;
+        }
+        
+        .main-content {
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 28px;
+        }
+        
+        .student-card {
+            padding: 30px 20px; /* Further reduced for small mobile */
+        }
+        
+        .student-avatar {
+            width: 100px; /* Further reduced for small mobile */
+            height: 100px; /* Further reduced for small mobile */
+        }
+        
+        .student-name {
+            font-size: 22px; /* Further reduced for small mobile */
+        }
+        
+        .student-roll {
+            font-size: 16px; /* Further reduced for small mobile */
+            padding: 8px 16px;
+        }
+    }
