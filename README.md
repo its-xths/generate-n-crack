@@ -9,7 +9,7 @@ A professional web application that generates strong passwords and simulates how
 
 ## 🌟 Live Demo
 
-[Watch](https://generate-n-crack.pages.dev/)
+[Click Me To See Harshit's Project](https://generate-n-crack.pages.dev/)
 
 ## ✨ Features
 
