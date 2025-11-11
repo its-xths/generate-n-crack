@@ -7,11 +7,9 @@
 
 A professional web application that generates strong passwords and simulates how long they would take to crack using brute force methods. Built with a sleek dark mode interface and real-time strength analysis.
 
-![Project Preview](https://generate-n-crack.pages.dev/)
-
 ## 🌟 Live Demo
 
-[![Cloudflare Pages](https://img.shields.io/badge/🚀_Live_Demo-Click_Here-orange?style=for-the-badge&logo=cloudflare)](https://your-project.pages.dev)
+![Click Here To Watch](https://generate-n-crack.pages.dev/)
 
 ## ✨ Features
 
