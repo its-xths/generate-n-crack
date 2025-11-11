@@ -7,7 +7,7 @@
 
 A professional web application that generates strong passwords and simulates how long they would take to crack using brute force methods. Built with a sleek dark mode interface and real-time strength analysis.
 
-![Project Preview](https://via.placeholder.com/800x400/0f0c29/ffffff?text=Password+Generator+%26+Cracking+Simulator)
+![Project Preview](https://generate-n-crack.pages.dev/)
 
 ## 🌟 Live Demo
 
