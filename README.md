@@ -56,7 +56,7 @@ git clone https://github.com/its-xths/generate-n-crack.git
 cd password-generator
 
 # Open in your browser
-# Simply open home.html in any modern web browser
+# Simply open index.html in any modern web browser
 ```
 
 ### Requirements
