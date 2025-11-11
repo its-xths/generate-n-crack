@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator & Cracking Simulator</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.13.0/brython.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.13.0/brython_stdlib.js"></script>
+  <link rel="stylesheet" href="design.css">
+</head>
+<body onload="brython()">
+    <div class="layout-container">
+
+        <div class="student-card">
+            <div class="student-avatar">
+                <img src="/harshit.jpeg" alt="Harshit Sharma">
+            </div>
+            <div class="student-name">Harshit<br>Sharma</div>
+            <div class="student-roll">25BCS11752</div>
+            <div class="student-name"><i>Application In Python Project</i><br></div>
+            <div class="student-divider"></div>
+            <div class="student-name"><br>414-B</div>
+        </div>
+        
+        <div class="main-content">
+            <h1>Password Generator & Cracking Simulator</h1>
+            <p class="subtitle">Generate strong passwords and see how long they would take to crack</p>
+            
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="length">Password Length:</label>
+                    <input type="number" id="length" min="6" max="300" value="12">
+                </div>
+                
+                <div class="options">
+                    <div class="option">
+                        <input type="checkbox" id="uppercase" checked>
+                        <label for="uppercase">Uppercase (A-Z)</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="lowercase" checked>
+                        <label for="lowercase">Lowercase (a-z)</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="numbers" checked>
+                        <label for="numbers">Numbers (0-9)</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="symbols" checked>
+                        <label for="symbols">Symbols (!@#$%^&*)</label>
+                    </div>
+                </div>
+                
+                <button id="generate" style="margin-top: 20px;">Generate Password</button>
+            </div>
+            
+            <div class="result-section">
+                <h2>Your Strong Password:</h2>
+                <div class="password-display-container">
+                    <div class="password-display">
+                        <span id="password"></span>
+                    </div>
+                    <button class="copy-btn" id="copy-btn">Copy</button>
+                </div>
+                
+                <div class="strength-meter">
+                    <div class="strength-bar" id="strength-bar"></div>
+                </div>
+                <div class="strength-text" id="strength-text"></div>
+            </div>
+            
+            <div class="cracking-simulator">
+                <h2>Password Cracking Simulation</h2>
+                <p>This simulation estimates how long it would take to crack your password using brute force methods.</p>
+                
+                <div class="progress-container">
+                    <div class="progress-bar" id="cracking-progress"></div>
+                </div>
+                
+                <div class="cracking-result" id="cracking-result">
+                    Click "Generate Password" to see cracking time estimate
+                </div>
+                
+                <button id="simulate-cracking">Simulate Cracking Process</button>
+            </div>
+        </div>
+    </div>
+
+<script type="text/python" src="script.py"></script>>
+</body>
+</html>
