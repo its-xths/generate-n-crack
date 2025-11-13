@@ -3,64 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Generator & Cracking Simulator</title>
+    <title>Generate-n-Crack: AI Password Analysis</title>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.13.0/brython.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.13.0/brython_stdlib.js"></script>
-  <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="design.css">
 </head>
 <body onload="brython()">
     <div class="layout-container">
-
+        <!-- Left Side: Student Info -->
         <div class="student-card">
             <div class="student-avatar">
                 <img src="/harshit.jpeg" alt="Harshit Sharma">
             </div>
             <div class="student-name">Harshit<br>Sharma</div>
             <div class="student-roll">25BCS11752</div>
-            <div class="student-name"><i>Application In Python Project</i><br></div>
+            <div class="student-name"><i>AI-Powered Password Security</i><br></div>
             <div class="student-divider"></div>
             <div class="student-name"><br>414-B</div>
+            
+            <!-- Social Links Section -->
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/xtharshitsharma/" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/its-xths/generate-n-crack" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                    <span>Source Code</span>
+                </a>
+            </div>
         </div>
         
+        <!-- Right Side: Main Content -->
         <div class="main-content">
-            <h1>Password Generator & Cracking Simulator</h1>
-            <p class="subtitle">Generate strong passwords and see how long they would take to crack</p>
+            <h1>Generate-n-Crack: Algo Password Analysis</h1>
+            <p class="subtitle">Generate passwords or test your own with AI predictability analysis</p>
             
             <div class="input-section">
-                <div class="input-group">
-                    <label for="length">Password Length:</label>
-                    <input type="number" id="length" min="6" max="300" value="12">
-                </div>
-                
-                <div class="options">
-                    <div class="option">
-                        <input type="checkbox" id="uppercase" checked>
-                        <label for="uppercase">Uppercase (A-Z)</label>
-                    </div>
-                    <div class="option">
-                        <input type="checkbox" id="lowercase" checked>
-                        <label for="lowercase">Lowercase (a-z)</label>
-                    </div>
-                    <div class="option">
-                        <input type="checkbox" id="numbers" checked>
-                        <label for="numbers">Numbers (0-9)</label>
-                    </div>
-                    <div class="option">
-                        <input type="checkbox" id="symbols" checked>
-                        <label for="symbols">Symbols (!@#$%^&*)</label>
+                <!-- Toggle Mode -->
+                <div class="mode-toggle">
+                    <label>Password Mode:</label>
+                    <div class="toggle-buttons">
+                        <button id="toggle-random" class="toggle-btn active">Generate Random</button>
+                        <button id="toggle-custom" class="toggle-btn">Use Custom Password</button>
                     </div>
                 </div>
-                
-                <button id="generate" style="margin-top: 20px;">Generate Password</button>
+
+                <!-- Random Password Section -->
+                <div id="random-section" class="mode-section active">
+                    <div class="input-group">
+                        <label for="length">Password Length:</label>
+                        <input type="number" id="length" min="6" max="50" value="12">
+                    </div>
+                    
+                    <div class="options">
+                        <div class="option">
+                            <input type="checkbox" id="uppercase" checked>
+                            <label for="uppercase">Uppercase (A-Z)</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="lowercase" checked>
+                            <label for="lowercase">Lowercase (a-z)</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="numbers" checked>
+                            <label for="numbers">Numbers (0-9)</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="symbols" checked>
+                            <label for="symbols">Symbols (!@#$%^&*)</label>
+                        </div>
+                    </div>
+                    
+                    <button id="generate" style="margin-top: 20px;">Generate Password</button>
+                </div>
+
+                <!-- Custom Password Section -->
+                <div id="custom-section" class="mode-section">
+                    <div class="input-group">
+                        <label for="custom-password">Enter Your Password:</label>
+                        <input type="text" id="custom-password" placeholder="Type your password here..." style="width: 100%;">
+                    </div>
+                    <button id="analyze-custom" style="margin-top: 20px;">Analyze Custom Password</button>
+                </div>
             </div>
             
             <div class="result-section">
-                <h2>Your Strong Password:</h2>
+                <h2>Password Analysis:</h2>
                 <div class="password-display-container">
                     <div class="password-display">
-                        <span id="password"></span>
+                        <span id="password">No password generated yet</span>
                     </div>
                     <button class="copy-btn" id="copy-btn">Copy</button>
+                </div>
+                
+                <div class="password-info">
+                    <div class="info-item">
+                        <span class="info-label">Length:</span>
+                        <span class="info-value" id="password-length">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Character Set:</span>
+                        <span class="info-value" id="character-set">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Entropy (Bits):</span>
+                        <span class="info-value" id="entropy-bits">-</span>
+                    </div>
                 </div>
                 
                 <div class="strength-meter">
@@ -69,23 +119,30 @@
                 <div class="strength-text" id="strength-text"></div>
             </div>
             
-            <div class="cracking-simulator">
-                <h2>Password Cracking Simulation</h2>
-                <p>This simulation estimates how long it would take to crack your password using brute force methods.</p>
+            <div class="predictability-analysis">
+                <h2>AI Predictability Analysis</h2>
                 
-                <div class="progress-container">
-                    <div class="progress-bar" id="cracking-progress"></div>
+                <div class="analysis-grid">
+                    <div class="analysis-card">
+                        <h3>Brute Force Predictability</h3>
+                        <div class="analysis-value" id="bruteforce-score">-</div>
+                        <div class="analysis-description" id="bruteforce-desc">Based on entropy and search space</div>
+                    </div>
+                    
+                    <div class="analysis-card">
+                        <h3>Markov Predictability</h3>
+                        <div class="analysis-value" id="markov-score">-</div>
+                        <div class="analysis-description" id="markov-desc">Pattern-based predictability analysis</div>
+                    </div>
                 </div>
                 
-                <div class="cracking-result" id="cracking-result">
-                    Click "Generate Password" to see cracking time estimate
+                <div class="predictability-result" id="predictability-result">
+                    Generate or enter a password to analyze predictability
                 </div>
-                
-                <button id="simulate-cracking">Simulate Cracking Process</button>
             </div>
         </div>
     </div>
 
-<script type="text/python" src="script.py"></script>>
+<script type="text/python" src="script.py"></script>
 </body>
 </html>
