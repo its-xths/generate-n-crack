@@ -30,7 +30,7 @@ A sophisticated web-based password analysis tool built with Brython, HTML, and C
 
 ## 📸 Screenshots
 
-<img width="1548" height="898" alt="image" src="https://github.com/user-attachments/assets/2fb25936-3ede-43d5-aa54-947bc8f482c1" />
+<img width="1692" height="879" alt="image" src="https://github.com/user-attachments/assets/3a88e4e0-ad44-4306-9841-59d48529adef" />
 <img width="887" height="302" alt="image" src="https://github.com/user-attachments/assets/88383714-5a67-4322-aa33-a055288e4646" />
 
 ## 🛠️ Installation
